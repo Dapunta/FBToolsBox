@@ -7,7 +7,7 @@ Facebook Automation Tools
 ```
 pip install FBTools
 ```
-<br>
+<br>  
 <br>
 
 ### Login Cookies
@@ -20,7 +20,7 @@ L.LoginCookie(cookie=cookie)
 ```
 Parameter  
 >cookie : Your Facebook Cookie (string, default=None)
-<br>
+<br>  
 <br>
 
 ### Login Email & Password
@@ -36,7 +36,7 @@ Parameter
 >email    : Your Facebook Email (string, default=None)  
 password : Your Facebook Password (string, default=None)  
 cookie   : Return Cookies After Execute (bool, default=False)
-<br>
+<br>  
 <br>
 
 ### Get Access Token
@@ -57,5 +57,5 @@ Parameter
 
 Note  
 >If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
-<br>
+<br>  
 <br>
