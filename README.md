@@ -10,6 +10,29 @@ pip install FBTools
 <br>  
 <br>
 
+### Create Account
+```python
+from FBTools.CreateAccount import CreateAccount
+
+name = 'Input Your Name Here'
+password = 'Input Your Password Here'
+birthday = '25/12/1995' # DD/MM/YYYY
+email = 'examplename@example.com'
+gender = 1 # 1=Male, 0=Female
+CA = CreateAccount()
+CA.SetData(name=name,password=password,birthday=birthday,email=email,gender=gender)
+CA.Create()
+```
+Parameter  
+>name : Name You Want To Create (string, default=None)  
+password : Password You Want To Create (string, default=None)  
+birthday : Birth Date You Want To Set (string, default=None)  
+email : Email You Want To Register (string, default=None)  
+phone : Phone You Want To Register (string, default=None)  
+gender : Gender You Want To Set (bool, default=0 -> female)  
+<br>  
+<br>
+
 ### Login Cookies
 ```python
 from FBTools.Login import Login
