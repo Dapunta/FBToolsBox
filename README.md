@@ -4,14 +4,14 @@ Facebook Automation Tools
 <br>
 
 ## Installation
-```
+```python
 pip install FBTools
 ```
 <br>  
 <br>
 
 ### Login Cookies
-```
+```python
 from FBTools.Login import Login
 
 cookie = 'Input Cookie Here'
@@ -24,7 +24,7 @@ Parameter
 <br>
 
 ### Login Email & Password
-```
+```python
 from FBTools.Login import Login
 
 email = 'Input Email Here'
@@ -40,7 +40,7 @@ cookie   : Return Cookies After Execute (bool, default=False)
 <br>
 
 ### Get Access Token
-```
+```python
 from FBTools.GetToken import GetToken
 
 cookie = 'Input Cookie Here'
