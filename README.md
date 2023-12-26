@@ -119,7 +119,7 @@ Note
 ### Parameter
 ```python
 cookie  = 'Input Your Cookie Here'                           # Cookie (string, default=None)
-group   = ['1824553201274304','804848814300940']             # Group ID (list, default=None)
+group   = '1824553201274304'                                 # Group ID (string, default=None)
 text    = 'Hello! Test Bot Post'                             # Caption (string, default=None)
 url     = ['https://e.top4top.io/p_2916o42201.jpg']          # Picture URL (list, default=None)
 tag     = ['1827084332','100000415317575','100000200420913'] # Friend ID You Want To Tag (list, default=None)
