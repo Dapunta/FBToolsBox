@@ -20,7 +20,7 @@ birthday = '25/12/1995' # DD/MM/YYYY
 email = 'examplename@example.com'
 gender = 1 # 1=Male, 0=Female
 CA = CreateAccount()
-CA.SetData(name=name,password=password,birthday=birthday,email=email,gender=gender)
+CA.SetData(name=name, password=password, birthday=birthday, email=email, gender=gender)
 CA.Create()
 ```
 Parameter  
@@ -53,7 +53,7 @@ from FBTools.Login import Login
 email = 'Input Email Here'
 password = 'Input Password Here'
 L = Login()
-L.LoginEmail(email=email,password=password,cookie=True)
+L.LoginEmail(email=email, password=password, cookie=True)
 ```
 Parameter
 >email    : Your Facebook Email (string, default=None)  
@@ -77,6 +77,37 @@ TokenEABB = GT.TokenEABB()
 ```
 Parameter  
 >cookie : Your Facebook Cookie (string, default=None)
+
+Note  
+>If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
+<br>  
+<br>
+
+### Get Info Account
+```python
+from FBTools.GetInfo import GetInfoAccount
+
+cookie = 'Input Cookie Here'
+target = 'Input ID Target Here'
+
+GIA = GetInfoAccount(cookie=cookie, target=target)
+Profile = GIA.GetInfoProfile(general=True, friend=True, followers=True)
+
+id         = Profile['id']
+username   = Profile['username']
+name       = Profile['name']
+short_name = Profile['short_name']
+hometown   = Profile['hometown']
+location   = Profile['location']
+friend     = Profile['friend']
+followers  = Profile['followers']
+```
+Parameter  
+>cookie : Your Facebook Cookie (string, default=None)  
+target : ID/Username/URL Target Profile (string, default='me')  
+general : Get General Information [id,username,name,shortname,hometown,location] (bool, default=True)  
+friend : Get The Number Of Friends [friend] (bool, default=False)  
+followers : Get The Number Of Followers [followers] (bool, default=False)  
 
 Note  
 >If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
