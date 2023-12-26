@@ -113,3 +113,36 @@ Note
 >If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
 <br>  
 <br>
+
+## Auto Post
+
+### Parameter
+```python
+cookie  = 'Input Your Cookie Here'                           # Cookie (string, default=None)
+group   = ['1824553201274304','804848814300940']             # Group ID (list, default=None)
+text    = 'Hello! Test Bot Post'                             # Caption (string, default=None)
+url     = ['https://e.top4top.io/p_2916o42201.jpg']          # Picture URL (list, default=None)
+tag     = ['1827084332','100000415317575','100000200420913'] # Friend ID You Want To Tag (list, default=None)
+privacy = 1 # 1=Public, 2=Friends, 3=OnlyMe                  # Post Privacy (int, default=None)
+```
+
+### Post To Feed
+```python
+from FBTools import AutoPost as AP
+
+Post = AP.PostToFeed(cookie=cookie, text=text, url=url, tag=tag, privacy=privacy)
+Exec = Post.Execute()
+```
+
+### Post To Group
+```python
+from FBTools import AutoPost as AP
+
+Post = AP.PostToGroup(cookie=cookie, group=group, text=text, url=url, tag=tag, privacy=privacy)
+Exec = Post.Execute()
+```
+
+Note  
+>If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
+<br>  
+<br>
