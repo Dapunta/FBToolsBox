@@ -208,7 +208,7 @@ react  = 2 # 1=Like, 2=Love, 3=Haha, 4=Wow, 5=Care, 6=Sad, 7=Angry  # Reaction T
 cookie = 'Input Your Cookie Here'                                   # Cookie (string, default=None)
 ```
 
-### Comment To Post
+### React To Post
 ```python
 from FBTools import AutoReact as AR
 
