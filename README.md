@@ -118,9 +118,14 @@ Note
 
 ### Parameter
 ```python
-cookie  = 'Input Your Cookie Here'                           # Cookie (string, default=None)
-group   = '1824553201274304'                                 # Group ID (string, default=None)
+# Must Be Included
 text    = 'Hello! Test Bot Post'                             # Caption (string, default=None)
+group   = '1824553201274304'                                 # Group ID (string, default=None)
+# 'group' must include if post to group
+# You must post at least 1 text or photo
+
+# Optional
+cookie  = 'Input Your Cookie Here'                           # Cookie (string, default=None)
 url     = ['https://e.top4top.io/p_2916o42201.jpg']          # Picture URL (list, default=None)
 tag     = ['1827084332','100000415317575','100000200420913'] # Friend ID You Want To Tag (list, default=None)
 privacy = 1 # 1=Public, 2=Friends, 3=OnlyMe                  # Post Privacy (int, default=None)
@@ -140,6 +145,50 @@ from FBTools import AutoPost as AP
 
 Post = AP.PostToGroup(cookie=cookie, group=group, text=text, url=url, tag=tag, privacy=privacy)
 Exec = Post.Execute()
+```
+
+### Return
+```python
+{'status':'success','id':idpost,'message':None}
+{'status':'pending','id':idpost,'message':'Pending Post'}
+{'status':'failed','id':None,'message':"Don't Create Same/Duplicate Post"}
+{'status':'failed','id':None,'message':'Your Account Restricted To Post In Group'}
+{'status':'failed','id':None,'message':'Terjadi Kesalahan'}
+```
+
+Note  
+>If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
+<br>  
+<br>
+
+## Auto Comment
+
+### Parameter
+```python
+# Must Be Included
+post   = 'Facebook.com/6929777330379375'                    # ID/URL Post Target (string, default=None)
+text   = 'Hello! Test Bot Comment'                          # Caption (string, default=None)
+# You must comment at least 1 text or photo
+
+# Optional
+cookie = 'Input Your Cookie Here'                           # Cookie (string, default=None)
+photo  = 'https://e.top4top.io/p_2916o42201.jpg'            # Picture URL (string, default=None)
+tag    = ['1827084332','100000415317575','100000200420913'] # Friend ID You Want To Tag (list, default=None)
+```
+
+### Comment To Post
+```python
+from FBTools import AutoComment as AC
+
+Comment = AC.CommentToPost(cookie=cookie, post=post, text=text, photo=photo, tag=tag)
+Exec = Comment.Execute()
+```
+
+### Return
+```python
+{'status':'success','id':comment_id,'message':None}
+{'status':'failed','id':None,'message':'Spam Or Something Else'}
+{'status':'failed','id':None,'message':'Terjadi Kesalahan'}
 ```
 
 Note  
