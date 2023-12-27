@@ -195,3 +195,36 @@ Note
 >If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
 <br>  
 <br>
+
+## Auto React
+
+### Parameter
+```python
+# Must Be Included
+post   = 'Facebook.com/6929777330379375'                            # ID/URL Post Target (string, default=None)
+react  = 2 # 1=Like, 2=Love, 3=Haha, 4=Wow, 5=Care, 6=Sad, 7=Angry  # Reaction Type (int, default=2=Love)
+
+# Optional
+cookie = 'Input Your Cookie Here'                                   # Cookie (string, default=None)
+```
+
+### Comment To Post
+```python
+from FBTools import AutoReact as AR
+
+Reaction = AR.ReactToPost(cookie=cookie, post=post, react=react)
+Exec = Reaction.Execute()
+```
+
+### Return
+```python
+{'status':'success','react_type':react_type,'message':None}
+{'status':'failed','react_type':react_type,'message':'Spam Or Something Else'}
+{'status':'failed','react_type':react_type,'message':'Terjadi Kesalahan'}
+```
+
+Note  
+>If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
+<br>  
+<br>
+
