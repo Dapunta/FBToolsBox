@@ -248,7 +248,7 @@ privacy = 1 # 1=Public, 2=Friends, 3=OnlyMe                  # Share Privacy (in
 ```python
 from FBTools import AutoShare as AS
 
-Share = AS.ShareToFeed(post=post, text=text, tag=tag, privacy=privacy)
+Share = AS.ShareToFeed(cookie=cookie, post=post, text=text, tag=tag, privacy=privacy)
 Exec  = Share.Execute()
 ```
 
@@ -256,7 +256,7 @@ Exec  = Share.Execute()
 ```python
 from FBTools import AutoShare as AS
 
-Share = AS.ShareToGroup(post=post, group=group, text=text, tag=tag, privacy=privacy)
+Share = AS.ShareToGroup(cookie=cookie, post=post, group=group, text=text, tag=tag, privacy=privacy)
 Exec  = Share.Execute()
 ```
 
