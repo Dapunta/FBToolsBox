@@ -228,3 +228,49 @@ Note
 <br>  
 <br>
 
+## Auto Share
+
+### Parameter
+```python
+# Must Be Included
+post    = 'Facebook.com/6929777330379375'                    # ID/URL Post You Want To Share (string, default=None)
+group   = '1824553201274304'                                 # Group ID (string, default=None)
+# 'group' must include if share to group
+
+# Optional
+cookie  = 'Input Your Cookie Here'                           # Cookie (string, default=None)
+text    = 'Hello! Test Bot Share'                            # Caption (string, default=None)
+tag     = ['1827084332','100000415317575','100000200420913'] # Friend ID You Want To Tag (list, default=None)
+privacy = 1 # 1=Public, 2=Friends, 3=OnlyMe                  # Share Privacy (int, default=None)
+```
+
+### Share To Feed
+```python
+from FBTools import AutoShare as AS
+
+Share = AS.ShareToFeed(post=post, text=text, tag=tag, privacy=privacy)
+Exec  = Share.Execute()
+```
+
+### Share To Group
+```python
+from FBTools import AutoShare as AS
+
+Share = AS.ShareToGroup(post=post, group=group, text=text, tag=tag, privacy=privacy)
+Exec  = Share.Execute()
+```
+
+### Return
+```python
+{'status':'success','id':idshare,'message':None}
+{'status':'pending','id':idshare,'message':'Pending Post'}
+{'status':'failed','id':None,'message':"Don't Create Same/Duplicate Post"}
+{'status':'failed','id':None,'message':'Your Account Restricted To Post In Group'}
+{'status':'failed','id':None,'message':'Terjadi Kesalahan'}
+```
+
+Note  
+>If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
+<br>  
+<br>
+
