@@ -33,41 +33,55 @@ gender : Gender You Want To Set (bool, default=0 -> female)
 <br>  
 <br>
 
-### Login Cookies
-```python
-from FBTools.Login import Login
+## Login
 
-cookie = 'Input Cookie Here'
-L = Login()
-L.LoginCookie(cookie=cookie)
+### Parameter
+```python
+cookie   = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
+email    = 'dapuntaxayonara@gmail.com' # Input Your Email Here
+phone    = '6282245780524'             # Input Your Phone Here
+password = 'satusampaidelapan'         # Input Your Password Here
 ```
-Parameter  
->cookie : Your Facebook Cookie (string, default=None)
+
+### Login With Cookie
+```python
+from FBTools import Start
+FB = Start(cookie=cookie)
+```
+
+### Login With Email & Password
+```python
+from FBTools import Start
+FB = Start(email=email, password=password)
+```
+
+### Login With Phone & Password
+```python
+from FBTools import Start
+FB = Start(phone=phone, password=password)
+```
+
+### Note
+```python
+# You must declare
+from FBTools import Start
+FB = Start(cookie=cookie) # or
+FB = Start(email=email, password=password) # or
+FB = Start(phone=phone, password=password)
+# When you want to run any feature of this package
+```
 <br>  
 <br>
 
-### Login Email & Password
+## Get Access Token
 ```python
-from FBTools.Login import Login
+from FBTools import Start
+cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
+Start(cookie=cookie)
 
-email = 'Input Email Here'
-password = 'Input Password Here'
-L = Login()
-L.LoginEmail(email=email, password=password, cookie=True)
-```
-Parameter
->email    : Your Facebook Email (string, default=None)  
-password : Your Facebook Password (string, default=None)  
-cookie   : Return Cookies After Execute (bool, default=False)
-<br>  
-<br>
+from FBTools import GetToken
+GT = GetToken()
 
-### Get Access Token
-```python
-from FBTools.GetToken import GetToken
-
-cookie = 'Input Cookie Here'
-GT = GetToken(cookie=cookie)
 TokenEAAG = GT.TokenEAAG()
 TokenEAAB = GT.TokenEAAB()
 TokenEAAD = GT.TokenEAAD()
@@ -75,11 +89,6 @@ TokenEAAC = GT.TokenEAAC()
 TokenEAAF = GT.TokenEAAF()
 TokenEABB = GT.TokenEABB()
 ```
-Parameter  
->cookie : Your Facebook Cookie (string, default=None)
-
-Note  
->If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
 <br>  
 <br>
 
@@ -119,13 +128,13 @@ Note
 ### Parameter
 ```python
 # Must Be Included
+cookie  = 'Input Your Cookie Here'                           # Cookie (string, default=None)
 text    = 'Hello! Test Bot Post'                             # Caption (string, default=None)
 group   = '1824553201274304'                                 # Group ID (string, default=None)
 # 'group' must include if post to group
-# You must post at least 1 text or photo
+# You must post at least 1 text or 1 photo
 
 # Optional
-cookie  = 'Input Your Cookie Here'                           # Cookie (string, default=None)
 url     = ['https://e.top4top.io/p_2916o42201.jpg']          # Picture URL (list, default=None)
 tag     = ['1827084332','100000415317575','100000200420913'] # Friend ID You Want To Tag (list, default=None)
 privacy = 1 # 1=Public, 2=Friends, 3=OnlyMe                  # Post Privacy (int, default=None)
@@ -133,31 +142,45 @@ privacy = 1 # 1=Public, 2=Friends, 3=OnlyMe                  # Post Privacy (int
 
 ### Post To Feed
 ```python
-from FBTools import AutoPost as AP
+from FBTools import Start
+cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
+Start(cookie=cookie)
 
-Post = AP.PostToFeed(cookie=cookie, text=text, url=url, tag=tag, privacy=privacy)
-Exec = Post.Execute()
+from FBTools import AutoPost
+AP = AutoPost()
+Post = AP.PostToFeed(text=text, url=url, tag=tag, privacy=privacy)
 ```
 
 ### Post To Group
 ```python
-from FBTools import AutoPost as AP
+from FBTools import Start
+cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
+Start(cookie=cookie)
 
-Post = AP.PostToGroup(cookie=cookie, group=group, text=text, url=url, tag=tag, privacy=privacy)
-Exec = Post.Execute()
+from FBTools import AutoPost
+AP = AutoPost()
+Post = AP.PostToGroup(group=group, text=text, url=url, tag=tag, privacy=privacy)
 ```
 
 ### Return
 ```python
 {'status':'success','id':idpost,'message':None}
 {'status':'pending','id':idpost,'message':'Pending Post'}
+{'status':'failed','id':None,'message':'cookie invalid'}
 {'status':'failed','id':None,'message':"Don't Create Same/Duplicate Post"}
 {'status':'failed','id':None,'message':'Your Account Restricted To Post In Group'}
 {'status':'failed','id':None,'message':'Terjadi Kesalahan'}
 ```
 
-Note  
->If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
+### Note
+```python
+# You must declare
+from FBTools import Start
+FB = Start(cookie=cookie) # or
+FB = Start(email=email, password=password) # or
+FB = Start(phone=phone, password=password)
+# When you want to run any feature of this package
+```
 <br>  
 <br>
 
