@@ -1,6 +1,7 @@
 # FBTools
 Facebook Automation Tools  
 >Python 3.10 - 3.12   
+<br>  
 <br>
 
 ## Installation
@@ -8,9 +9,10 @@ Facebook Automation Tools
 pip install FBTools
 ```
 <br>  
+<br>  
 <br>
 
-### Create Account
+## Create Account
 ```python
 from FBTools.CreateAccount import CreateAccount
 
@@ -31,11 +33,12 @@ email : Email You Want To Register (string, default=None)
 phone : Phone You Want To Register (string, default=None)  
 gender : Gender You Want To Set (bool, default=0 -> female)  
 <br>  
+<br>  
 <br>
 
 ## Login
 
-### Parameter
+#### Parameter
 ```python
 cookie   = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
 email    = 'dapuntaxayonara@gmail.com' # Input Your Email Here
@@ -43,25 +46,25 @@ phone    = '6282245780524'             # Input Your Phone Here
 password = 'satusampaidelapan'         # Input Your Password Here
 ```
 
-### Login With Cookie
+#### Login With Cookie
 ```python
 from FBTools import Start
 FB = Start(cookie=cookie)
 ```
 
-### Login With Email & Password
+#### Login With Email & Password
 ```python
 from FBTools import Start
 FB = Start(email=email, password=password)
 ```
 
-### Login With Phone & Password
+#### Login With Phone & Password
 ```python
 from FBTools import Start
 FB = Start(phone=phone, password=password)
 ```
 
-### Note
+#### Note
 ```python
 # You must declare
 from FBTools import Start
@@ -70,6 +73,7 @@ FB = Start(email=email, password=password) # or
 FB = Start(phone=phone, password=password)
 # When you want to run any feature of this package
 ```
+<br>  
 <br>  
 <br>
 
@@ -90,9 +94,10 @@ TokenEAAF = GT.TokenEAAF()
 TokenEABB = GT.TokenEABB()
 ```
 <br>  
+<br>  
 <br>
 
-### Get Info Account
+## Get Info Account
 ```python
 from FBTools.GetInfo import GetInfoAccount
 
@@ -121,11 +126,12 @@ followers : Get The Number Of Followers [followers] (bool, default=False)
 Note  
 >If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
 <br>  
+<br>  
 <br>
 
 ## Auto Post
 
-### Parameter
+#### Parameter
 ```python
 # Must Be Included
 cookie  = 'Input Your Cookie Here'                           # Cookie (string, default=None)
@@ -140,7 +146,7 @@ tag     = ['1827084332','100000415317575','100000200420913'] # Friend ID You Wan
 privacy = 1 # 1=Public, 2=Friends, 3=OnlyMe                  # Post Privacy (int, default=None)
 ```
 
-### Post To Feed
+#### Post To Feed
 ```python
 from FBTools import Start
 cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
@@ -151,7 +157,7 @@ AP = AutoPost()
 Post = AP.PostToFeed(text=text, url=url, tag=tag, privacy=privacy)
 ```
 
-### Post To Group
+#### Post To Group
 ```python
 from FBTools import Start
 cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
@@ -162,7 +168,7 @@ AP = AutoPost()
 Post = AP.PostToGroup(group=group, text=text, url=url, tag=tag, privacy=privacy)
 ```
 
-### Return
+#### Return
 ```python
 {'status':'success','id':idpost,'message':None}
 {'status':'pending','id':idpost,'message':'Pending Post'}
@@ -172,7 +178,7 @@ Post = AP.PostToGroup(group=group, text=text, url=url, tag=tag, privacy=privacy)
 {'status':'failed','id':None,'message':'Terjadi Kesalahan'}
 ```
 
-### Note
+#### Note
 ```python
 # You must declare
 from FBTools import Start
@@ -182,46 +188,60 @@ FB = Start(phone=phone, password=password)
 # When you want to run any feature of this package
 ```
 <br>  
+<br>  
 <br>
 
 ## Auto Comment
 
-### Parameter
+#### Parameter
 ```python
 # Must Be Included
+cookie = 'Input Your Cookie Here'                           # Cookie (string, default=None)
 post   = 'Facebook.com/6929777330379375'                    # ID/URL Post Target (string, default=None)
 text   = 'Hello! Test Bot Comment'                          # Caption (string, default=None)
-# You must comment at least 1 text or photo
+# You must comment at least 1 text or 1 photo
 
 # Optional
-cookie = 'Input Your Cookie Here'                           # Cookie (string, default=None)
+
 photo  = 'https://e.top4top.io/p_2916o42201.jpg'            # Picture URL (string, default=None)
 tag    = ['1827084332','100000415317575','100000200420913'] # Friend ID You Want To Tag (list, default=None)
 ```
 
-### Comment To Post
+#### Comment To Post
 ```python
-from FBTools import AutoComment as AC
+from FBTools import Start
+cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
+Start(cookie=cookie)
 
-Comment = AC.CommentToPost(cookie=cookie, post=post, text=text, photo=photo, tag=tag)
-Exec = Comment.Execute()
+from FBTools import AutoComment
+AC = AutoComment()
+Comment = AC.CommentToPost(post=post, text=text, photo=photo, tag=tag)
 ```
 
-### Return
+#### Return
 ```python
 {'status':'success','id':comment_id,'message':None}
+{'status':'failed','id':None,'message':'cookie invalid'}
 {'status':'failed','id':None,'message':'Spam Or Something Else'}
 {'status':'failed','id':None,'message':'Terjadi Kesalahan'}
 ```
 
-Note  
->If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
+#### Note
+```python
+# You must declare
+from FBTools import Start
+FB = Start(cookie=cookie) # or
+FB = Start(email=email, password=password) # or
+FB = Start(phone=phone, password=password)
+# When you want to run any feature of this package
+```
+<br>  
 <br>  
 <br>
 
 ## Auto React
 
-### Parameter
+#### Parameter
 ```python
 # Must Be Included
 post   = 'Facebook.com/6929777330379375'                            # ID/URL Post Target (string, default=None)
@@ -231,7 +251,7 @@ react  = 2 # 1=Like, 2=Love, 3=Haha, 4=Wow, 5=Care, 6=Sad, 7=Angry  # Reaction T
 cookie = 'Input Your Cookie Here'                                   # Cookie (string, default=None)
 ```
 
-### React To Post
+#### React To Post
 ```python
 from FBTools import AutoReact as AR
 
@@ -239,21 +259,29 @@ Reaction = AR.ReactToPost(cookie=cookie, post=post, react=react)
 Exec = Reaction.Execute()
 ```
 
-### Return
+#### Return
 ```python
 {'status':'success','react_type':react_type,'message':None}
 {'status':'failed','react_type':react_type,'message':'Spam Or Something Else'}
 {'status':'failed','react_type':react_type,'message':'Terjadi Kesalahan'}
 ```
 
-Note  
->If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
+#### Note
+```python
+# You must declare
+from FBTools import Start
+FB = Start(cookie=cookie) # or
+FB = Start(email=email, password=password) # or
+FB = Start(phone=phone, password=password)
+# When you want to run any feature of this package
+```
+<br>  
 <br>  
 <br>
 
 ## Auto Share
 
-### Parameter
+#### Parameter
 ```python
 # Must Be Included
 post    = 'Facebook.com/6929777330379375'                    # ID/URL Post You Want To Share (string, default=None)
@@ -267,7 +295,7 @@ tag     = ['1827084332','100000415317575','100000200420913'] # Friend ID You Wan
 privacy = 1 # 1=Public, 2=Friends, 3=OnlyMe                  # Share Privacy (int, default=None)
 ```
 
-### Share To Feed
+#### Share To Feed
 ```python
 from FBTools import AutoShare as AS
 
@@ -275,7 +303,7 @@ Share = AS.ShareToFeed(cookie=cookie, post=post, text=text, tag=tag, privacy=pri
 Exec  = Share.Execute()
 ```
 
-### Share To Group
+#### Share To Group
 ```python
 from FBTools import AutoShare as AS
 
@@ -283,7 +311,7 @@ Share = AS.ShareToGroup(cookie=cookie, post=post, group=group, text=text, tag=ta
 Exec  = Share.Execute()
 ```
 
-### Return
+#### Return
 ```python
 {'status':'success','id':idshare,'message':None}
 {'status':'pending','id':idshare,'message':'Pending Post'}
@@ -292,8 +320,16 @@ Exec  = Share.Execute()
 {'status':'failed','id':None,'message':'Terjadi Kesalahan'}
 ```
 
-Note  
->If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
+#### Note
+```python
+# You must declare
+from FBTools import Start
+FB = Start(cookie=cookie) # or
+FB = Start(email=email, password=password) # or
+FB = Start(phone=phone, password=password)
+# When you want to run any feature of this package
+```
+<br>  
 <br>  
 <br>
 
