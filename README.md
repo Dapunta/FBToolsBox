@@ -68,20 +68,24 @@ FB = Start(phone=phone, password=password)
 <br>
 
 ## Get Access Token
+
+#### Parameter
+```python
+# Must Be Included
+cookie  = 'Input Your Cookie Here'       # Cookie (string, default=None)
+```
+
+### Token
 ```python
 from FBTools import Start
-cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
-Start(cookie=cookie)
+FB = Start(cookie=cookie)
 
-from FBTools import GetToken
-GT = GetToken()
-
-TokenEAAG = GT.TokenEAAG()
-TokenEAAB = GT.TokenEAAB()
-TokenEAAD = GT.TokenEAAD()
-TokenEAAC = GT.TokenEAAC()
-TokenEAAF = GT.TokenEAAF()
-TokenEABB = GT.TokenEABB()
+TokenEAAG = FB.TokenEAAG()
+TokenEAAB = FB.TokenEAAB()
+TokenEAAD = FB.TokenEAAD()
+TokenEAAC = FB.TokenEAAC()
+TokenEAAF = FB.TokenEAAF()
+TokenEABB = FB.TokenEABB()
 ```
 <br>  
 <br>  
