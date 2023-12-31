@@ -63,16 +63,6 @@ FB = Start(email=email, password=password)
 from FBTools import Start
 FB = Start(phone=phone, password=password)
 ```
-
-#### Note
-```python
-# You must declare
-from FBTools import Start
-FB = Start(cookie=cookie) # or
-FB = Start(email=email, password=password) # or
-FB = Start(phone=phone, password=password)
-# When you want to run any feature of this package
-```
 <br>  
 <br>  
 <br>
@@ -171,16 +161,6 @@ Post = FB.PostToGroup(group=group, text=text, url=url, tag=tag, privacy=privacy)
 {'status':'failed','id':None,'message':'Your Account Restricted To Post In Group'}
 {'status':'failed','id':None,'message':'Terjadi Kesalahan'}
 ```
-
-#### Note
-```python
-# You must declare
-from FBTools import Start
-FB = Start(cookie=cookie) # or
-FB = Start(email=email, password=password) # or
-FB = Start(phone=phone, password=password)
-# When you want to run any feature of this package
-```
 <br>  
 <br>  
 <br>
@@ -215,16 +195,6 @@ Comment = FB.CommentToPost(post=post, text=text, photo=photo, tag=tag)
 {'status':'failed','id':None,'message':'Spam Or Something Else'}
 {'status':'failed','id':None,'message':'Terjadi Kesalahan'}
 ```
-
-#### Note
-```python
-# You must declare
-from FBTools import Start
-FB = Start(cookie=cookie) # or
-FB = Start(email=email, password=password) # or
-FB = Start(phone=phone, password=password)
-# When you want to run any feature of this package
-```
 <br>  
 <br>  
 <br>
@@ -253,16 +223,6 @@ Reaction = FB.ReactToPost(post=post, react=react)
 {'status':'failed','react_type':react_type,'message':'Spam Or Something Else'}
 {'status':'failed','react_type':react_type,'message':'Terjadi Kesalahan'}
 ```
-
-#### Note
-```python
-# You must declare
-from FBTools import Start
-FB = Start(cookie=cookie) # or
-FB = Start(email=email, password=password) # or
-FB = Start(phone=phone, password=password)
-# When you want to run any feature of this package
-```
 <br>  
 <br>  
 <br>
@@ -272,12 +232,12 @@ FB = Start(phone=phone, password=password)
 #### Parameter
 ```python
 # Must Be Included
+cookie  = 'Input Your Cookie Here'                           # Cookie (string, default=None)
 post    = 'Facebook.com/6929777330379375'                    # ID/URL Post You Want To Share (string, default=None)
 group   = '1824553201274304'                                 # Group ID (string, default=None)
 # 'group' must include if share to group
 
 # Optional
-cookie  = 'Input Your Cookie Here'                           # Cookie (string, default=None)
 text    = 'Hello! Test Bot Share'                            # Caption (string, default=None)
 tag     = ['1827084332','100000415317575','100000200420913'] # Friend ID You Want To Tag (list, default=None)
 privacy = 1 # 1=Public, 2=Friends, 3=OnlyMe                  # Share Privacy (int, default=None)
@@ -304,18 +264,9 @@ Share = FB.ShareToGroup(post=post, group=group, text=text, tag=tag, privacy=priv
 {'status':'success','id':idshare,'message':None}
 {'status':'pending','id':idshare,'message':'Pending Post'}
 {'status':'failed','id':None,'message':"Don't Create Same/Duplicate Post"}
+{'status':'failed','id':None,'message':'post has been deleted or there is an error'}
 {'status':'failed','id':None,'message':'Your Account Restricted To Post In Group'}
 {'status':'failed','id':None,'message':'Terjadi Kesalahan'}
-```
-
-#### Note
-```python
-# You must declare
-from FBTools import Start
-FB = Start(cookie=cookie) # or
-FB = Start(email=email, password=password) # or
-FB = Start(phone=phone, password=password)
-# When you want to run any feature of this package
 ```
 <br>  
 <br>  
