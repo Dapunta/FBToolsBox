@@ -149,23 +149,19 @@ privacy = 1 # 1=Public, 2=Friends, 3=OnlyMe                  # Post Privacy (int
 #### Post To Feed
 ```python
 from FBTools import Start
-cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
-Start(cookie=cookie)
 
-from FBTools import AutoPost
-AP = AutoPost()
-Post = AP.PostToFeed(text=text, url=url, tag=tag, privacy=privacy)
+cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
+FB = Start(cookie=cookie)
+Post = FB.PostToFeed(text=text, url=url, tag=tag, privacy=privacy)
 ```
 
 #### Post To Group
 ```python
 from FBTools import Start
-cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
-Start(cookie=cookie)
 
-from FBTools import AutoPost
-AP = AutoPost()
-Post = AP.PostToGroup(group=group, text=text, url=url, tag=tag, privacy=privacy)
+cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
+FB = Start(cookie=cookie)
+Post = FB.PostToGroup(group=group, text=text, url=url, tag=tag, privacy=privacy)
 ```
 
 #### Return
@@ -210,12 +206,10 @@ tag    = ['1827084332','100000415317575','100000200420913'] # Friend ID You Want
 #### Comment To Post
 ```python
 from FBTools import Start
-cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
-Start(cookie=cookie)
 
-from FBTools import AutoComment
-AC = AutoComment()
-Comment = AC.CommentToPost(post=post, text=text, photo=photo, tag=tag)
+cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
+FB = Start(cookie=cookie)
+Comment = FB.CommentToPost(post=post, text=text, photo=photo, tag=tag)
 ```
 
 #### Return
@@ -244,19 +238,18 @@ FB = Start(phone=phone, password=password)
 #### Parameter
 ```python
 # Must Be Included
-post   = 'Facebook.com/6929777330379375'                            # ID/URL Post Target (string, default=None)
-react  = 2 # 1=Like, 2=Love, 3=Haha, 4=Wow, 5=Care, 6=Sad, 7=Angry  # Reaction Type (int, default=2=Love)
-
-# Optional
 cookie = 'Input Your Cookie Here'                                   # Cookie (string, default=None)
+post   = 'Facebook.com/6929777330379375'                            # ID/URL Post Target (string, default=None)
+react  = 5 # 1=Like, 2=Love, 3=Haha, 4=Wow, 5=Care, 6=Sad, 7=Angry  # Reaction Type (int, default=2=Love)
 ```
 
 #### React To Post
 ```python
-from FBTools import AutoReact as AR
+from FBTools import Start
 
-Reaction = AR.ReactToPost(cookie=cookie, post=post, react=react)
-Exec = Reaction.Execute()
+cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
+FB = Start(cookie=cookie)
+Reaction = FB.ReactToPost(post=post, react=react)
 ```
 
 #### Return
@@ -297,18 +290,20 @@ privacy = 1 # 1=Public, 2=Friends, 3=OnlyMe                  # Share Privacy (in
 
 #### Share To Feed
 ```python
-from FBTools import AutoShare as AS
+from FBTools import Start
 
-Share = AS.ShareToFeed(cookie=cookie, post=post, text=text, tag=tag, privacy=privacy)
-Exec  = Share.Execute()
+cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
+FB = Start(cookie=cookie)
+Share = FB.ShareToFeed(post=post, text=text, tag=tag, privacy=privacy)
 ```
 
 #### Share To Group
 ```python
-from FBTools import AutoShare as AS
+from FBTools import Start
 
-Share = AS.ShareToGroup(cookie=cookie, post=post, group=group, text=text, tag=tag, privacy=privacy)
-Exec  = Share.Execute()
+cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
+FB = Start(cookie=cookie)
+Share = FB.ShareToGroup(post=post, group=group, text=text, tag=tag, privacy=privacy)
 ```
 
 #### Return
