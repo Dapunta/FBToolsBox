@@ -150,7 +150,6 @@ privacy = 1 # 1=Public, 2=Friends, 3=OnlyMe                  # Post Privacy (int
 ```python
 from FBTools import Start
 
-cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
 FB = Start(cookie=cookie)
 Post = FB.PostToFeed(text=text, url=url, tag=tag, privacy=privacy)
 ```
@@ -159,7 +158,6 @@ Post = FB.PostToFeed(text=text, url=url, tag=tag, privacy=privacy)
 ```python
 from FBTools import Start
 
-cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
 FB = Start(cookie=cookie)
 Post = FB.PostToGroup(group=group, text=text, url=url, tag=tag, privacy=privacy)
 ```
@@ -198,7 +196,6 @@ text   = 'Hello! Test Bot Comment'                          # Caption (string, d
 # You must comment at least 1 text or 1 photo
 
 # Optional
-
 photo  = 'https://e.top4top.io/p_2916o42201.jpg'            # Picture URL (string, default=None)
 tag    = ['1827084332','100000415317575','100000200420913'] # Friend ID You Want To Tag (list, default=None)
 ```
@@ -207,7 +204,6 @@ tag    = ['1827084332','100000415317575','100000200420913'] # Friend ID You Want
 ```python
 from FBTools import Start
 
-cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
 FB = Start(cookie=cookie)
 Comment = FB.CommentToPost(post=post, text=text, photo=photo, tag=tag)
 ```
@@ -247,7 +243,6 @@ react  = 5 # 1=Like, 2=Love, 3=Haha, 4=Wow, 5=Care, 6=Sad, 7=Angry  # Reaction T
 ```python
 from FBTools import Start
 
-cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
 FB = Start(cookie=cookie)
 Reaction = FB.ReactToPost(post=post, react=react)
 ```
@@ -292,7 +287,6 @@ privacy = 1 # 1=Public, 2=Friends, 3=OnlyMe                  # Share Privacy (in
 ```python
 from FBTools import Start
 
-cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
 FB = Start(cookie=cookie)
 Share = FB.ShareToFeed(post=post, text=text, tag=tag, privacy=privacy)
 ```
@@ -301,7 +295,6 @@ Share = FB.ShareToFeed(post=post, text=text, tag=tag, privacy=privacy)
 ```python
 from FBTools import Start
 
-cookie = 'datr=nxbaxnynx; sb=axn...' # Input Your Cookie Here
 FB = Start(cookie=cookie)
 Share = FB.ShareToGroup(post=post, group=group, text=text, tag=tag, privacy=privacy)
 ```
