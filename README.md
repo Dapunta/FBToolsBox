@@ -123,6 +123,8 @@ print(Info.language)
 print(Info.website)
 print(Info.github)
 print(Info.instagram)
+print(Info.friend)
+print(Info.follower)
 ```
 <br>  
 <br>  
