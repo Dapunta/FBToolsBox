@@ -91,34 +91,39 @@ TokenEABB = FB.TokenEABB()
 <br>  
 <br>
 
-## Get Info Account
+## Get Info Account, Page, Group
+
+#### Parameter
 ```python
-from FBTools.GetInfo import GetInfoAccount
-
-cookie = 'Input Cookie Here'
-target = 'Input ID Target Here'
-
-GIA = GetInfoAccount(cookie=cookie, target=target)
-Profile = GIA.GetInfoProfile(general=True, friend=True, followers=True)
-
-id         = Profile['id']
-username   = Profile['username']
-name       = Profile['name']
-short_name = Profile['short_name']
-hometown   = Profile['hometown']
-location   = Profile['location']
-friend     = Profile['friend']
-followers  = Profile['followers']
+# Must Be Included
+cookie  = 'Input Your Cookie Here'       # Cookie (string, default=None)
+profile = 'Input ID Profile Here'        # ID/URL Profile Target (string, default=False)
+page    = 'Input ID Page Here'           # ID/URL Page Target (string, default=False)
+group   = 'Input ID Group Here'          # ID/URL Group Target (string, default=False)
 ```
-Parameter  
->cookie : Your Facebook Cookie (string, default=None)  
-target : ID/Username/URL Target Profile (string, default='me')  
-general : Get General Information [id,username,name,shortname,hometown,location] (bool, default=True)  
-friend : Get The Number Of Friends [friend] (bool, default=False)  
-followers : Get The Number Of Followers [followers] (bool, default=False)  
 
-Note  
->If you have logged in with cookies/email on Login(), you don't need to provide cookie parameters
+#### Get Info Profile
+```python
+from FBTools import Start
+FB = Start(cookie=cookie)
+
+Info = FB.GetInfoProfile(profile)
+print(Info.id)
+print(Info.username)
+print(Info.name)
+print(Info.short_name)
+print(Info.gender)
+print(Info.work)
+print(Info.education)
+print(Info.current_city)
+print(Info.hometown)
+print(Info.relationship)
+print(Info.birthday)
+print(Info.language)
+print(Info.website)
+print(Info.github)
+print(Info.instagram)
+```
 <br>  
 <br>  
 <br>
