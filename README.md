@@ -98,7 +98,7 @@ TokenEABB = FB.TokenEABB()
 # Must Be Included
 cookie         = 'datr=nxbaxnynx; sb=axn...'     # Cookie (string, default=None)
 target_profile = '100000198243102'               # ID/URL Profile Target (string, default=False)
-target_page    = 'Input ID Page Here'            # ID/URL Page Target (string, default=False)
+target_page    = '100044426739616'               # ID/URL Page Target (string, default=False)
 target_group   = '1824553201274304'              # ID/URL Group Target (string, default=False)
 ```
 
@@ -125,6 +125,19 @@ print(profile.github)
 print(profile.instagram)
 print(profile.friend)
 print(profile.follower)
+```
+
+#### Get Info Page
+```python
+from FBTools import Start
+FB = Start(cookie=cookie)
+
+page = FB.GetInfoPage(target_page)
+print(page.id)
+print(page.username)
+print(page.name)
+print(page.follower)
+print(page.category)
 ```
 
 #### Get Info Group
