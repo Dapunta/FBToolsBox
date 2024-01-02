@@ -362,6 +362,13 @@ from FBTools import Start
 FB = Start(cookie=cookie)
 Privacy = FB.AlbumPrivacy(album=album, privacy=privacy)
 ```
+
+#### Return
+```python
+{'status':'success','id':id,'privacy':privacy,'message':None}
+{'status':'failed','id':id,'privacy':None,'message':'Spam Or Something'}
+{'status':'failed','id':None,'privacy':None,'message':'Something Went Wrong'}
+```
 <br>  
 <br>  
 <br>
