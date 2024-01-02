@@ -327,3 +327,43 @@ Share = FB.ShareToGroup(post=post, group=group, text=text, tag=tag, privacy=priv
 <br>  
 <br>
 
+## Change Privacy
+
+#### Parameter
+```python
+# Must Be Included
+cookie  = 'Input Your Cookie Here'             # Cookie (string, default=None)
+post    = '10217059556200871'                  # ID/URL Post  You Want To Change Privacy (string, default=None)
+photo   = '10214228940637251'                  # ID/URL Photo You Want To Change Privacy (string, default=None)
+album   = '146803788687013'                    # ID/URL Album You Want To Change Privacy (string, default=None)
+privacy = 3 # 1=Public, 2=Friends, 3=OnlyMe    # Selected Privacy (int, default=3)
+```
+
+#### Post Privacy
+```python
+from FBTools import Start
+
+FB = Start(cookie=cookie)
+Privacy = FB.PostPrivacy(post=post, privacy=privacy)
+```
+
+#### Photo Privacy
+```python
+from FBTools import Start
+
+FB = Start(cookie=cookie)
+Privacy = FB.PhotoPrivacy(photo=photo, privacy=privacy)
+```
+
+#### Album Privacy
+```python
+from FBTools import Start
+
+FB = Start(cookie=cookie)
+Privacy = FB.AlbumPrivacy(album=album, privacy=privacy)
+```
+<br>  
+<br>  
+<br>
+
+
