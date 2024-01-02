@@ -96,10 +96,10 @@ TokenEABB = FB.TokenEABB()
 #### Parameter
 ```python
 # Must Be Included
-cookie  = 'Input Your Cookie Here'       # Cookie (string, default=None)
-profile = 'Input ID Profile Here'        # ID/URL Profile Target (string, default=False)
-page    = 'Input ID Page Here'           # ID/URL Page Target (string, default=False)
-group   = 'Input ID Group Here'          # ID/URL Group Target (string, default=False)
+cookie         = 'datr=nxbaxnynx; sb=axn...'     # Cookie (string, default=None)
+target_profile = '100000198243102'               # ID/URL Profile Target (string, default=False)
+target_page    = 'Input ID Page Here'            # ID/URL Page Target (string, default=False)
+target_group   = '1824553201274304'              # ID/URL Group Target (string, default=False)
 ```
 
 #### Get Info Profile
@@ -107,24 +107,46 @@ group   = 'Input ID Group Here'          # ID/URL Group Target (string, default=
 from FBTools import Start
 FB = Start(cookie=cookie)
 
-Info = FB.GetInfoProfile(profile)
-print(Info.id)
-print(Info.username)
-print(Info.name)
-print(Info.short_name)
-print(Info.gender)
-print(Info.work)
-print(Info.education)
-print(Info.current_city)
-print(Info.hometown)
-print(Info.relationship)
-print(Info.birthday)
-print(Info.language)
-print(Info.website)
-print(Info.github)
-print(Info.instagram)
-print(Info.friend)
-print(Info.follower)
+profile = FB.GetInfoProfile(target_profile)
+print(profile.id)
+print(profile.username)
+print(profile.name)
+print(profile.short_name)
+print(profile.gender)
+print(profile.work)
+print(profile.education)
+print(profile.current_city)
+print(profile.hometown)
+print(profile.relationship)
+print(profile.birthday)
+print(profile.language)
+print(profile.website)
+print(profile.github)
+print(profile.instagram)
+print(profile.friend)
+print(profile.follower)
+```
+
+#### Get Info Group
+```python
+from FBTools import Start
+FB = Start(cookie=cookie)
+
+group = FB.GetInfoGroup(target_group)
+print(group.id)
+print(group.username)
+print(group.name)
+print(group.privacy)
+print(group.membership)
+print(group.admin)
+print(group.moderator)
+print(group.member)
+print(group.new_member)
+print(group.post_last_day)
+print(group.post_last_month)
+print(group.visibility)
+print(group.history)
+print(group.description)
 ```
 <br>  
 <br>  
