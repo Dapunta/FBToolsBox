@@ -17,6 +17,7 @@ pip install FBTools
 #### 2. Get Access Token EAAG, EAAB, EAAD, EAAC, EAAF and EABB
 #### 3. Get Information of Profile, Page, and Group
 #### 4. Post To Feed, Post To Group, Comment To Post, React To Post, Share To Feed, Share To Group
+#### 5. Change Privacy Post, Photo, and Album
 <br>  
 <br>  
 <br>
