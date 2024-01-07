@@ -13,7 +13,7 @@ with open('README.md','r',encoding = 'utf-8') as doc:
 setup(
   name = 'FBTools',
   packages = ['FBTools'],
-  version = '0.0.1',
+  version = '0.0.2',
   license='MIT',
   description = 'Facebook Scrapper',
   long_description=readme,
